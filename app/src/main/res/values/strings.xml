@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Salão Cleide</string>
+    <string name="txtLogin">Login</string>
+    <string name="edtCodUser">Usuário</string>
+    <string name="edtVazio" />
+    <string name="edtPswUser">Senha</string>
+    <string name="btnActLoginAcessar">Acessar</string>
+</resources>
