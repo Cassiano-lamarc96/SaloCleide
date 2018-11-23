@@ -6,4 +6,93 @@
     android:layout_height="match_parent"
     tools:context=".actRegisterService">
 
+    <TextView
+        android:id="@+id/txtServico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/txtServico"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtCliente"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/txtCliente"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtServico" />
+
+    <Spinner
+        android:id="@+id/spnCliente"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        app:layout_constraintEnd_toEndOf="@+id/txtCliente"
+        app:layout_constraintStart_toStartOf="@+id/txtCliente"
+        app:layout_constraintTop_toBottomOf="@+id/txtCliente" />
+
+    <TextView
+        android:id="@+id/txtCadSerico"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/txtCadServico"
+        app:layout_constraintEnd_toEndOf="@+id/spnCliente"
+        app:layout_constraintStart_toStartOf="@+id/spnCliente"
+        app:layout_constraintTop_toBottomOf="@+id/spnCliente" />
+
+    <Spinner
+        android:id="@+id/spnServico"
+        android:layout_width="0dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/txtCadSerico"
+        app:layout_constraintStart_toStartOf="@+id/txtCadSerico"
+        app:layout_constraintTop_toBottomOf="@+id/txtCadSerico" />
+
+    <TextView
+        android:id="@+id/txtPreco"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/txtPreco"
+        app:layout_constraintEnd_toEndOf="@+id/spnServico"
+        app:layout_constraintStart_toStartOf="@+id/spnServico"
+        app:layout_constraintTop_toBottomOf="@+id/spnServico" />
+
+    <EditText
+        android:id="@+id/edtPreco"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/edtHintPreco"
+        android:inputType="numberDecimal"
+        android:text="@string/edtVazio"
+        app:layout_constraintEnd_toEndOf="@+id/txtPreco"
+        app:layout_constraintStart_toStartOf="@+id/txtPreco"
+        app:layout_constraintTop_toBottomOf="@+id/txtPreco"
+        android:importantForAutofill="no" tools:targetApi="o" />
+
+    <Button
+        android:id="@+id/btnCadastrar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="@string/btnCadastrar"
+        app:layout_constraintEnd_toEndOf="@+id/edtPreco"
+        app:layout_constraintStart_toStartOf="@+id/edtPreco"
+        app:layout_constraintTop_toBottomOf="@+id/edtPreco" />
+
 </android.support.constraint.ConstraintLayout>

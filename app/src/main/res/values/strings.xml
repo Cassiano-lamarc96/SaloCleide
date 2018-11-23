@@ -5,4 +5,13 @@
     <string name="edtVazio" />
     <string name="edtPswUser">Senha</string>
     <string name="btnActLoginAcessar">Acessar</string>
+    <string name="txtServico">Cadastre o Serviço</string>
+    <string name="txtCliente">Escolha o Cliente:</string>
+    <string name="txtCadServico">Escolha o Serviço:</string>
+    <string name="txtPreco">Digite o Preço:</string>
+    <string name="edtHintPreco">R$</string>
+    <string name="btnCadastrar">Cadastrar</string>
+    <string name="txtConsultaServico">Consulte os Serviços:</string>
+    <string name="txtData">Escolha o dia:</string>
+    <string name="edtHintData">Digite a data Corretamente</string>
 </resources>
