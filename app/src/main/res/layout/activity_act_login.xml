@@ -56,6 +56,8 @@
         android:text="@string/btnActLoginAcessar"
         app:layout_constraintEnd_toEndOf="@+id/edtPswUser"
         app:layout_constraintStart_toStartOf="@+id/edtPswUser"
-        app:layout_constraintTop_toBottomOf="@+id/edtPswUser" />
+        app:layout_constraintTop_toBottomOf="@+id/edtPswUser"
+        android:onClick="Acessar"
+        />
 
 </android.support.constraint.ConstraintLayout>

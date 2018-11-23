@@ -1,5 +1,6 @@
 package com.example.sigfas.salocleide;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +26,8 @@ public class actLogin extends AppCompatActivity {
         user.setPswUser(edtPswUser.getText().toString());
         if (user.getCodUser() == 9615 && user.getPswUser().equals("cacalindo")){
             // Muda para a página de cadastro dos serviços.
+            Intent it = new Intent(this, actRegisterService.class);
+            startActivity(it);
         }
     }
 }
