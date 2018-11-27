@@ -14,6 +14,7 @@ public class actConsultaServicos extends AppCompatActivity {
     }
 
     protected void refresh(View view){
+        this.finish();
         Intent itRefresh = new Intent(this, actConsultaServicos.class);
         startActivity(itRefresh);
     }

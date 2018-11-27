@@ -18,7 +18,7 @@
 
     <EditText
         android:id="@+id/edtCodUser"
-        android:layout_width="wrap_content"
+        android:layout_width="215dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -27,12 +27,13 @@
         android:layout_marginRight="8dp"
         android:ems="10"
         android:hint="@string/edtCodUser"
+        android:importantForAutofill="no"
         android:inputType="number"
         android:text="@string/edtVazio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtLogin"
-        android:importantForAutofill="no" tools:targetApi="o" />
+        tools:targetApi="o" />
 
     <EditText
         android:id="@+id/edtPswUser"

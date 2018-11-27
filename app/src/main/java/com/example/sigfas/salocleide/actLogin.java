@@ -1,6 +1,8 @@
 package com.example.sigfas.salocleide;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,12 +24,13 @@ public class actLogin extends AppCompatActivity {
         usuario user = new usuario();
         edtCodUSer = findViewById(R.id.edtCodUser);
         edtPswUser = findViewById(R.id.edtPswUser);
-        user.setCodUser(Integer.parseInt(edtCodUSer.getText().toString()));
-        user.setPswUser(edtPswUser.getText().toString());
-        if (user.getCodUser() == 9615 && user.getPswUser().equals("cacalindo")){
-            // Muda para a página de cadastro dos serviços.
-            Intent it = new Intent(this, actRegisterService.class);
-            startActivity(it);
+        if (!edtCodUSer.getText().toString().isEmpty() && !edtPswUser.getText().toString().isEmpty()){
+            user.setCodUser(Integer.parseInt(edtCodUSer.getText().toString()));
+            user.setPswUser(edtPswUser.getText().toString());
+            if (user.getCodUser() == 9615 && user.getPswUser().equals("cacalindo")){
+                Intent it = new Intent(this, actRegisterService.class);
+                startActivity(it);
+            }
         }
     }
 }
