@@ -13,18 +13,80 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toolbar;
+
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class actRegisterService extends AppCompatActivity {
 
+    bancoDados db = new bancoDados(this);
+    Spinner Spn;
+    Spinner SpnServ;
+    EditText edtPreco;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_register_service);
+        carregaSpinnerCliente();
+    }
+    HashMap<Integer, String> lstCliente = new HashMap<Integer, String>();
+    HashMap<Integer, String> lstServico = new HashMap<Integer, String>();
+    List<mCliente> LstmCliente = new ArrayList<mCliente>();
+    
+    public void carregaSpinnerCliente(){
+        //LstmCliente = db.retornaClientes();
+        //Spn = findViewById(R.id.spnCliente);
+        //String[] spinnerArray = new String[LstmCliente.size()];
+        //List<String> lstNome = new ArrayList<String>();
+        //for (mCliente clie : LstmCliente){
+        //    lstNome.add(clie.getNome());
+        //}
+        //List<Integer> lstId = new ArrayList<Integer>();
+        //for (mCliente clie : LstmCliente){
+        //    lstId.add((clie.getId()));
+        //}
+        //for (int i = 0; i < LstmCliente.size(); i ++){
+        //    lstCliente.put(i, lstId.get(i).toString());
+        //    spinnerArray[i] = lstNome.get(i);
+        //}
+
+        //ArrayAdapter<String> arrayAdapter =
+        //        new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, spinnerArray);
+        //arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Spn.setAdapter(arrayAdapter);
+    }
+
+    public void carregaSpinnerServico(){
+        List<mServico> LstmServico = new ArrayList<mServico>();
+        LstmServico = db.retornaServico();
+        SpnServ = findViewById(R.id.spnServico);
+        String[] spinnerArray = new String[LstmServico.size()];
+        List<String> lstNome = new ArrayList<String>();
+        for (mServico serv : LstmServico){
+            lstNome.add(serv.getNome());
+        }
+        List<Integer> lstId = new ArrayList<Integer>();
+        for (mServico serv : LstmServico){
+            lstId.add((serv.getId()));
+        }
+        for (int i = 0; i < LstmServico.size(); i ++){
+            lstServico.put(i, lstId.get(i).toString());
+            spinnerArray[i] = lstNome.get(i);
+        }
+
+        ArrayAdapter<String> arrayAdapter =
+                new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, spinnerArray);
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        SpnServ.setAdapter(arrayAdapter);
     }
 
     private boolean cadastrarServico(){
-        //Por enquanto retorna true, mas servirá para cadastrar o serviço.
         return  true;
     }
 

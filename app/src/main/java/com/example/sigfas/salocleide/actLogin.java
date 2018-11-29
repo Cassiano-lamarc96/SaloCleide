@@ -18,6 +18,8 @@ public class actLogin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_login);
+        bancoDados db = new bancoDados(this);
+
     }
 
     protected void Acessar(View view){
@@ -30,7 +32,7 @@ public class actLogin extends AppCompatActivity {
         //    if (user.getCodUser() == 9615 && user.getPswUser().equals("cacalindo")){
                 Intent it = new Intent(this, actRegisterService.class);
                 startActivity(it);
-       //     }
-        //}
+          // }
+       //}
     }
 }

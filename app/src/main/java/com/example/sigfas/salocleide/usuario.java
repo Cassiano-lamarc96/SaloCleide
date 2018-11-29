@@ -5,8 +5,13 @@ public class usuario {
 
     }
 
+    private int id;
     private int codUser;
     private String pswUser;
+
+    public int getId(){
+        return this.id;
+    }
 
     public void setCodUser(int codUser){
         this.codUser = codUser;
