@@ -6,13 +6,36 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 public class actAddServico extends AppCompatActivity {
+
+    EditText edtNome;
+    EditText edtPreco;
+    bancoDados bd = new bancoDados(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_add_servico);
+    }
+
+    public void cadastraServico(View view){
+        edtNome = findViewById(R.id.edtNomeSevico);
+        edtPreco = findViewById(R.id.edtPreco);
+        mServico serv = new mServico();
+        serv.setNome(edtNome.getText().toString());
+        serv.setPreco(Double.parseDouble(edtPreco.getText().toString()));
+        bd.insereServico(serv);
+        limparCampos();
+    }
+
+    public void limparCampos(){
+        edtNome = findViewById(R.id.edtNomeSevico);
+        edtPreco = findViewById(R.id.edtPreco);
+        edtNome.setText("");
+        edtPreco.setText("");
     }
 
     @Override

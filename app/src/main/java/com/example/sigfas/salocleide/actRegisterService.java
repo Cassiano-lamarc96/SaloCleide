@@ -34,32 +34,33 @@ public class actRegisterService extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_register_service);
         carregaSpinnerCliente();
+        carregaSpinnerServico();
     }
     HashMap<Integer, String> lstCliente = new HashMap<Integer, String>();
     HashMap<Integer, String> lstServico = new HashMap<Integer, String>();
     List<mCliente> LstmCliente = new ArrayList<mCliente>();
     
     public void carregaSpinnerCliente(){
-        //LstmCliente = db.retornaClientes();
-        //Spn = findViewById(R.id.spnCliente);
-        //String[] spinnerArray = new String[LstmCliente.size()];
-        //List<String> lstNome = new ArrayList<String>();
-        //for (mCliente clie : LstmCliente){
-        //    lstNome.add(clie.getNome());
-        //}
-        //List<Integer> lstId = new ArrayList<Integer>();
-        //for (mCliente clie : LstmCliente){
-        //    lstId.add((clie.getId()));
-        //}
-        //for (int i = 0; i < LstmCliente.size(); i ++){
-        //    lstCliente.put(i, lstId.get(i).toString());
-        //    spinnerArray[i] = lstNome.get(i);
-        //}
+        LstmCliente = db.retornaClientes();
+        Spn = findViewById(R.id.spnCliente);
+        String[] spinnerArray = new String[LstmCliente.size()];
+        List<String> lstNome = new ArrayList<String>();
+        for (mCliente clie : LstmCliente){
+            lstNome.add(clie.getNome());
+        }
+        List<Integer> lstId = new ArrayList<Integer>();
+        for (mCliente clie : LstmCliente){
+            lstId.add((clie.getId()));
+        }
+        for (int i = 0; i < LstmCliente.size(); i ++){
+            lstCliente.put(i, lstId.get(i).toString());
+            spinnerArray[i] = lstNome.get(i);
+        }
 
-        //ArrayAdapter<String> arrayAdapter =
-        //        new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, spinnerArray);
-        //arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Spn.setAdapter(arrayAdapter);
+        ArrayAdapter<String> arrayAdapter =
+                new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, spinnerArray);
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        Spn.setAdapter(arrayAdapter);
     }
 
     public void carregaSpinnerServico(){
@@ -104,7 +105,6 @@ public class actRegisterService extends AppCompatActivity {
                 MudarParaAct(actAddCliente.class);
             case R.id.adicionarNovoServico:
                 MudarParaAct(actAddServico.class);
-
         }
         return true;
     }
