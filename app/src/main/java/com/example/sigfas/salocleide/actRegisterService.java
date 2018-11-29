@@ -39,7 +39,7 @@ public class actRegisterService extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
             case R.id.adicionarNovoCliente:
-                MudarParaAct(actLogin.class);
+                MudarParaAct(actAddCliente.class);
         }
         return true;
     }

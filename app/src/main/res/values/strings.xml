@@ -16,4 +16,6 @@
     <string name="edtHintData">Digite a data Corretamente</string>
     <string name="action_add">+ Serviço</string>
     <string name="action_addCliente">+ Cliente</string>
+    <string name="txtAddCliente">Cadastre o Cliente</string>
+    <string name="edtAddCliente">Digite o Nome</string>
 </resources>
