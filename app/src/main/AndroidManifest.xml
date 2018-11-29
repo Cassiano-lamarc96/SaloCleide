@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".actRegisterService" />
         <activity android:name=".actConsultaServicos" />
-        <activity android:name=".actAddCliente"></activity>
+        <activity android:name=".actAddCliente" />
+        <activity android:name=".actAddServico"></activity>
     </application>
 
 </manifest>

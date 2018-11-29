@@ -18,4 +18,8 @@
     <string name="action_addCliente">+ Cliente</string>
     <string name="txtAddCliente">Cadastre o Cliente</string>
     <string name="edtAddCliente">Digite o Nome</string>
+    <string name="edtTelefone">Digite o Telefone</string>
+    <string name="retonar">Retornar</string>
+    <string name="txtAddSerico">Cadastre Serviços</string>
+    <string name="edtNomeServicoHint">Nome do Serviço</string>
 </resources>

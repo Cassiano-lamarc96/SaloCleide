@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".actAddCliente"
+    tools:context=".actAddServico"
     tools:menu="@menu/menu_voltar">
 
     <TextView
-        android:id="@+id/txtAddCliente"
+        android:id="@+id/txtAddServico"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -16,51 +16,50 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="@string/txtAddCliente"
+        android:text="@string/txtAddSerico"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edtAddCliente"
+        android:id="@+id/edtNomeSevico"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:ems="10"
+        android:hint="@string/edtNomeServicoHint"
         android:inputType="textPersonName"
         android:text="@string/edtVazio"
-        android:hint="@string/edtAddCliente"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAddCliente"
-        tools:text="@string/edtVazio"
+        app:layout_constraintTop_toBottomOf="@+id/txtAddServico"
+        android:importantForAutofill="no" tools:targetApi="o" />
+
+    <EditText
+        android:id="@+id/edtPrecoServico"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:text="@string/edtVazio"
+        android:hint="@string/edtHintPreco"
+        app:layout_constraintEnd_toEndOf="@+id/edtNomeSevico"
+        app:layout_constraintStart_toStartOf="@+id/edtNomeSevico"
+        app:layout_constraintTop_toBottomOf="@+id/edtNomeSevico"
         android:importantForAutofill="no" tools:targetApi="o"/>
 
     <Button
-        android:id="@+id/btnAddCliente"
+        android:id="@+id/btnCadastrarServico"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/btnCadastrar"
-        app:layout_constraintEnd_toEndOf="@+id/edtTelefoneCliente"
-        app:layout_constraintStart_toStartOf="@+id/edtTelefoneCliente"
-        app:layout_constraintTop_toBottomOf="@+id/edtTelefoneCliente" />
-
-    <EditText
-        android:id="@+id/edtTelefoneCliente"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="@string/edtTelefone"
-        android:inputType="phone"
-        android:text="@string/edtVazio"
-        app:layout_constraintEnd_toEndOf="@+id/edtAddCliente"
-        app:layout_constraintStart_toStartOf="@+id/edtAddCliente"
-        app:layout_constraintTop_toBottomOf="@+id/edtAddCliente"
-        android:autofillHints="" tools:targetApi="o"/>
+        app:layout_constraintEnd_toEndOf="@+id/edtPrecoServico"
+        app:layout_constraintStart_toStartOf="@+id/edtPrecoServico"
+        app:layout_constraintTop_toBottomOf="@+id/edtPrecoServico" />
 </android.support.constraint.ConstraintLayout>

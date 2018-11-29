@@ -40,6 +40,9 @@ public class actRegisterService extends AppCompatActivity {
         switch(item.getItemId()){
             case R.id.adicionarNovoCliente:
                 MudarParaAct(actAddCliente.class);
+            case R.id.adicionarNovoServico:
+                MudarParaAct(actAddServico.class);
+
         }
         return true;
     }
