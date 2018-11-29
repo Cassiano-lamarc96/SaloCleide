@@ -21,16 +21,16 @@ public class actLogin extends AppCompatActivity {
     }
 
     protected void Acessar(View view){
-        usuario user = new usuario();
-        edtCodUSer = findViewById(R.id.edtCodUser);
-        edtPswUser = findViewById(R.id.edtPswUser);
-        if (!edtCodUSer.getText().toString().isEmpty() && !edtPswUser.getText().toString().isEmpty()){
-            user.setCodUser(Integer.parseInt(edtCodUSer.getText().toString()));
-            user.setPswUser(edtPswUser.getText().toString());
-            if (user.getCodUser() == 9615 && user.getPswUser().equals("cacalindo")){
+        //usuario user = new usuario();
+        //edtCodUSer = findViewById(R.id.edtCodUser);
+        //edtPswUser = findViewById(R.id.edtPswUser);
+        //if (!edtCodUSer.getText().toString().isEmpty() && !edtPswUser.getText().toString().isEmpty()){
+        //    user.setCodUser(Integer.parseInt(edtCodUSer.getText().toString()));
+        //    user.setPswUser(edtPswUser.getText().toString());
+        //    if (user.getCodUser() == 9615 && user.getPswUser().equals("cacalindo")){
                 Intent it = new Intent(this, actRegisterService.class);
                 startActivity(it);
-            }
-        }
+       //     }
+        //}
     }
 }

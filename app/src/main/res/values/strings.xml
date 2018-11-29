@@ -14,5 +14,6 @@
     <string name="txtConsultaServico">Consulte os Serviços:</string>
     <string name="txtData">Escolha o dia:</string>
     <string name="edtHintData">Digite a data Corretamente</string>
-    <string name="action_add">Adicionar</string>
+    <string name="action_add">+ Serviço</string>
+    <string name="action_addCliente">+ Cliente</string>
 </resources>

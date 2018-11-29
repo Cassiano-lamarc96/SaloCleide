@@ -4,17 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".actRegisterService">
-    <menu xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        tools:context="com.sartainstudios.contacts.MyContacts">
-        <item
-            android:id="@+id/action_add"
-            android:icon="@mipmap/ic_add"
-            android:title="@string/action_add"
-            app:showAsAction="always"/>
-    </menu>
+    tools:menu="@menu/menusalao">
+
+
+
 <TextView
         android:id="@+id/txtServico"
         android:layout_width="wrap_content"

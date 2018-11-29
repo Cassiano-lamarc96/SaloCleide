@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".actRegisterService" />
-        <activity android:name=".actConsultaServicos"></activity>
+        <activity android:name=".actConsultaServicos" />
+        <activity android:name=".actAddCliente"></activity>
     </application>
 
 </manifest>

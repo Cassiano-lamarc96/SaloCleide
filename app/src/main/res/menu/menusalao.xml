@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/adicionarNovoServico"
+        android:title="@string/action_add"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:enabled="true"
+        />
+    <item android:id="@+id/adicionarNovoCliente"
+        android:title="@string/action_addCliente"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:enabled="true"
+        />
+</menu>
