@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.DialogFragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -88,7 +89,47 @@ public class actRegisterService extends AppCompatActivity {
     }
 
     private boolean cadastrarServico(){
-        return  true;
+        servicoRealizado sere = new servicoRealizado();
+        sere.setIdCliente(Integer.parseInt(lstCliente.get(Spn.getSelectedItemPosition())));
+        sere.setIdServico(Integer.parseInt(lstServico.get(SpnServ.getSelectedItemPosition())));
+        edtPreco = findViewById(R.id.edtPreco);
+        if (!edtPreco.getText().toString().isEmpty()){
+            sere.setpreco(Double.parseDouble(edtPreco.getText().toString()));
+            if (db.insereServicoRealizado(sere)) {
+                mensagem(1);
+                return true;
+            }else{
+                mensagem(0);
+                return false;
+            }
+        }else{
+            mensagem(0);
+            return false;
+        }
+    }
+
+    public void mensagem(int tipo){
+        String Title;
+        String Msg;
+        if (tipo == 0){
+            //error
+            Title = "Erro";
+            Msg = "Preencha todos os campos e Tente novamente!";
+        }else{
+            //success
+            Title = "Sucesso!";
+            Msg = "Serviço Cadastrado com sucesso!";
+        }
+
+        AlertDialog.Builder alert = new AlertDialog.Builder(actRegisterService.this);
+        alert.setTitle(Title);
+        alert.setMessage(Msg)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
     }
 
     @Override
@@ -114,14 +155,18 @@ public class actRegisterService extends AppCompatActivity {
         startActivity(it);
     }
 
+    public void limparCampos(){
+        edtPreco = findViewById(R.id.edtPreco);
+        edtPreco.setText("");
+    }
+
     protected void cadastrar(View view){
         Intent it = new Intent(this, actConsultaServicos.class);
-        DialogFragment dialog = new DialogFragment();
         if (cadastrarServico()){
-            dialog.show(getSupportFragmentManager(), "Cadastro Realizado com sucesso!");
+            limparCampos();
             startActivity(it);
         }else{
-            dialog.show(getSupportFragmentManager(), "Não foi possível cadastrar. Tente novamente!");
+            limparCampos();
         }
     }
 }
