@@ -33,32 +33,49 @@ public class bancoDados extends SQLiteOpenHelper{
 
     }
 
-    public void insereCliente(mCliente clie){
-        SQLiteDatabase db = getWritableDatabase();
-        ContentValues cv = new ContentValues();
-        cv.put("CLIE_NOME", clie.getNome());
-        cv.put("CLIE_TELEFONE", clie.getTelefone());
-        db.insert("CLIENTE", null, cv);
-        db.close();
+    public boolean insereCliente(mCliente clie){
+        try {
+
+            SQLiteDatabase db = getWritableDatabase();
+            ContentValues cv = new ContentValues();
+            cv.put("CLIE_NOME", clie.getNome());
+            cv.put("CLIE_TELEFONE", clie.getTelefone());
+            db.insert("CLIENTE", null, cv);
+            db.close();
+            return true;
+        }
+        catch (Exception e){
+            return false;
+        }
     }
 
-    public void insereServico(mServico serv){
-        SQLiteDatabase db = getWritableDatabase();
-        ContentValues cv = new ContentValues();
-        cv.put("SERV_NOME", serv.getNome());
-        cv.put("SERV_PRECO", serv.getPreco());
-        db.insert("SERVICO", null, cv);
-        db.close();
+    public boolean insereServico(mServico serv){
+        try {
+            SQLiteDatabase db = getWritableDatabase();
+            ContentValues cv = new ContentValues();
+            cv.put("SERV_NOME", serv.getNome());
+            cv.put("SERV_PRECO", serv.getPreco());
+            db.insert("SERVICO", null, cv);
+            db.close();
+            return true;
+        }catch (Exception e){
+            return false;
+        }
     }
 
-    public void insereServicoRealizado(servicoRealizado sere){
-        SQLiteDatabase db = getWritableDatabase();
-        ContentValues cv = new ContentValues();
-        cv.put("CLIE_ID", sere.getIdCliente());
-        cv.put("SERV_ID", sere.getIdServico());
-        cv.put("SERV_PRECO", sere.getPreco());
-        db.insert("SERVICO_REALIZADO", null, cv);
-        db.close();
+    public boolean insereServicoRealizado(servicoRealizado sere){
+        try {
+            SQLiteDatabase db = getWritableDatabase();
+            ContentValues cv = new ContentValues();
+            cv.put("CLIE_ID", sere.getIdCliente());
+            cv.put("SERV_ID", sere.getIdServico());
+            cv.put("SERV_PRECO", sere.getPreco());
+            db.insert("SERVICO_REALIZADO", null, cv);
+            db.close();
+            return true;
+        }catch(Exception e){
+            return false;
+        }
     }
 
     public List<mCliente> retornaClientes(){
