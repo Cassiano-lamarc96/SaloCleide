@@ -11,8 +11,8 @@ import java.util.List;
 
 public class bancoDados extends SQLiteOpenHelper{
 
-    public static final int VERSAO_BANCO = 2;
-    public static final String BANCO_CLIENTE = "SALAOCLEIDE";
+    public static final int VERSAO_BANCO = 1;
+    public static final String BANCO_CLIENTE = "SALAOCLEIDEv1";
 
     public bancoDados(Context context){
         super(context, BANCO_CLIENTE, null, VERSAO_BANCO);
@@ -96,6 +96,46 @@ public class bancoDados extends SQLiteOpenHelper{
         return  lstRet;
     }
 
+    public mCliente retornaClieId(int id){
+        mCliente mClie = new mCliente();
+        try{
+            SQLiteDatabase db = getReadableDatabase();
+            String sql = "SELECT * FROM CLIENTE WHERE CLIE_ID = " + id;
+            Cursor c = db.rawQuery(sql, null);
+            if (c.moveToFirst()){
+                do{
+                    mClie.setId(c.getInt(0));
+                    mClie.setNome(c.getString(1));
+                    mClie.setTelefone(c.getInt(2));
+                    return mClie;
+                }while (c.moveToNext());
+            }
+        }catch (Exception e){
+            return null;
+        }
+        return mClie;
+    }
+
+    public mServico retornaServId(int id){
+        mServico mServico = new mServico();
+        try{
+            SQLiteDatabase db = getReadableDatabase();
+            String sql = "SELECT * FROM SERVICO WHERE SERV_ID = " + id;
+            Cursor c = db.rawQuery(sql, null);
+            if (c.moveToFirst()){
+                do{
+                    mServico.setId(c.getInt(0));
+                    mServico.setNome(c.getString(1));
+                    mServico.setPreco(c.getDouble(2));
+                    return mServico;
+                }while (c.moveToNext());
+            }
+        }catch (Exception e){
+            return null;
+        }
+        return mServico;
+    }
+
     public List<mServico> retornaServico(){
         List<mServico> lstRet = new ArrayList<mServico>();
         SQLiteDatabase db = getReadableDatabase();
@@ -132,6 +172,8 @@ public class bancoDados extends SQLiteOpenHelper{
         db.close();
         return  lstRet;
     }
+
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1){

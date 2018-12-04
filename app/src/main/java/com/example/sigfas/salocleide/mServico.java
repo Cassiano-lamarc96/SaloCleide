@@ -4,7 +4,7 @@ public class mServico {
 
     private int id;
     public String Nome;
-    public double Preco;
+    public Double Preco;
 
     public int getId(){
         return this.id;
@@ -17,13 +17,13 @@ public class mServico {
     public void setNome(String nome){
         this.Nome = nome;
     }
-    public void setPreco(double preco){
+    public void setPreco(Double preco){
         this.Preco = preco;
     }
     public String getNome(){
         return this.Nome;
     }
-    public double getPreco(){
+    public Double getPreco(){
         return this.Preco;
     }
 }

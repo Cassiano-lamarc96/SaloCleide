@@ -25,20 +25,22 @@ public class actAddServico extends AppCompatActivity {
 
     public void cadastraServico(View view){
         edtNome = findViewById(R.id.edtNomeSevico);
-        edtPreco = findViewById(R.id.edtPreco);
+        edtPreco = findViewById(R.id.edtPrecoServico);
         mServico serv = new mServico();
         serv.setNome(edtNome.getText().toString());
         serv.setPreco(Double.parseDouble(edtPreco.getText().toString()));
         if (!serv.getNome().isEmpty() && serv.getPreco() != 0){
             if (bd.insereServico(serv)){
-                mensagem(1);
+                //mensagem(1);
+                Intent intent = new Intent(this, actRegisterService.class);
+                startActivity(intent);
             }else{
-                mensagem(0);
+                //mensagem(0);
             }
         }else{
-            mensagem(0);
+            //mensagem(0);
         }
-        limparCampos();
+        //limparCampos();
     }
 
     public void mensagem(int tipo){

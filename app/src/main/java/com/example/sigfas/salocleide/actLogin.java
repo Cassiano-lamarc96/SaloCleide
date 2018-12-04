@@ -30,8 +30,8 @@ public class actLogin extends AppCompatActivity {
             user.setCodUser(Integer.parseInt(edtCodUSer.getText().toString()));
             user.setPswUser(edtPswUser.getText().toString());
             if (user.getCodUser() == 9615 && user.getPswUser().equals("cacalindo")){
-               Intent it = new Intent(this, actRegisterService.class);
-               startActivity(it);
+             Intent it = new Intent(this, actRegisterService.class);
+             startActivity(it);
             }
         }
     }

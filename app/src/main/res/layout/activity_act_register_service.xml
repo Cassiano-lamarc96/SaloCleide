@@ -95,9 +95,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
         android:text="@string/btnCadastrar"
-        android:onClick="cadastrar"
+        android:onClick="cadastrar2"
         app:layout_constraintEnd_toEndOf="@+id/edtPreco"
         app:layout_constraintStart_toStartOf="@+id/edtPreco"
         app:layout_constraintTop_toBottomOf="@+id/edtPreco" />
+
+    <Button
+        android:id="@+id/btnConsultarServicos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="consultarServico"
+        android:text="@string/btnConsultarSrev"
+        app:layout_constraintEnd_toEndOf="@+id/btnCadastrar"
+        app:layout_constraintStart_toStartOf="@+id/btnCadastrar"
+        app:layout_constraintTop_toBottomOf="@+id/btnCadastrar" />
 
 </android.support.constraint.ConstraintLayout>

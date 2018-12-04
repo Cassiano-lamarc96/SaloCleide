@@ -13,7 +13,7 @@ import java.util.List;
 public class actConsultaServicos extends AppCompatActivity {
 
     ArrayList<String> listItems = new ArrayList<String>();
-
+    bancoDados bd = new bancoDados(this);
     //DEFINING A STRING ADAPTER WHICH WILL HANDLE THE DATA OF THE LISTVIEW
     ArrayAdapter<String> adapter;
     ListView lstView;
@@ -26,9 +26,11 @@ public class actConsultaServicos extends AppCompatActivity {
     }
 
     public void carregaListView(){
-        List<mServico> lstSrevico = new ArrayList<mServico>();
-        for (mServico serv : lstSrevico){
-            String Itens = serv.getNome();
+        List<servicoRealizado> lstSrevico = new ArrayList<servicoRealizado>();
+        lstSrevico = bd.retornaServicoRealizado();
+        for (servicoRealizado Servico : lstSrevico){
+            String Itens =  "Cliente: " + bd.retornaClieId(Integer.parseInt(Servico.getIdCliente() + "")).getNome() +
+                    "; Servico = " + bd.retornaServId(Integer.parseInt(Servico.getIdServico() + "")).getNome() + " Preço: " + Servico.getPreco();
             listItems.add(Itens);
         }
         setContentView(R.layout.activity_act_consulta_servicos);

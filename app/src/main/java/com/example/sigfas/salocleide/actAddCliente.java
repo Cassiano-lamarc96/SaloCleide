@@ -38,14 +38,16 @@ public class actAddCliente extends AppCompatActivity {
         clie.setTelefone(Integer.parseInt(edtTelefone.getText().toString()));
         if (clie.getNome().isEmpty() == false && clie.getTelefone() != 0){
             if (db.insereCliente(clie)) {
-                mensagem(1);
+                //mensagem(1);
+                Intent intent = new Intent(this, actRegisterService.class);
+                startActivity(intent);
             }else{
-                mensagem(0);
+                //mensagem(0);
             }
         }else {
-            mensagem(0);
+            //mensagem(0);
         }
-        limparCampos();
+        //limparCampos();
     }
 
     public void mensagem(int tipo){
@@ -74,7 +76,7 @@ public class actAddCliente extends AppCompatActivity {
 
     public void limparCampos(){
         edtNome = findViewById(R.id.edtNomeSevico);
-        edtTelefone = findViewById(R.id.edtPreco);
+        edtTelefone = findViewById(R.id.edtTelefoneCliente);
         edtNome.setText("");
         edtTelefone.setText("");
     }

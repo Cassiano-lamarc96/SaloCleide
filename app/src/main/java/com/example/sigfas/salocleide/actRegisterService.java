@@ -108,6 +108,11 @@ public class actRegisterService extends AppCompatActivity {
         }
     }
 
+    public void consultarServico(View view){
+        Intent itRefresh = new Intent(this, actConsultaServicos.class);
+        startActivity(itRefresh);
+    }
+
     public void mensagem(int tipo){
         String Title;
         String Msg;
@@ -144,10 +149,12 @@ public class actRegisterService extends AppCompatActivity {
         switch(item.getItemId()){
             case R.id.adicionarNovoCliente:
                 MudarParaAct(actAddCliente.class);
+                return true;
             case R.id.adicionarNovoServico:
                 MudarParaAct(actAddServico.class);
+                return true;
         }
-        return true;
+        return  true;
     }
 
     public void MudarParaAct(Class actClass){
@@ -160,7 +167,7 @@ public class actRegisterService extends AppCompatActivity {
         edtPreco.setText("");
     }
 
-    protected void cadastrar(View view){
+    public void cadastrar2(View view){
         Intent it = new Intent(this, actConsultaServicos.class);
         if (cadastrarServico()){
             limparCampos();
